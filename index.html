@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Viz_LlamadasEmergencia</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Dataset</h2>
+    <h5>Título de los Datos</h5>
+    <p>LLAMADAS DE URGENCIAS Y EMERGENCIAS LINEA 123 - SALUD</p>
+    <h5>Descripción de los Datos</h5>
+    <p>Llamadas de Urgencias y Emergencias que ingresan a través de la línea 123 y que son clasificadas como llamadas de emergencia tipificada para salud.</p>
+    <h5>Datos proporcionados por</h5>
+    <p>Datos Abiertos Bogotá</p>
+    <h5>Fuente de los datos</h5>
+    <p>Datos tomados de: <a href="https://datosabiertos.bogota.gov.co/">Datos Abiertos Bogotá</a></p>
+    <p><a href="https://datosabiertos.bogota.gov.co/dataset/b99881e0-8750-4fa8-af6c-3f30c9e38708?_external=True"> Link a los datos</a></p>
+    <h5>Ejemplo de la tabla</h5>
+    <img src="./Captura1.png" alt="Ejemplo de la tabla" style="width:100%;height:600px;">
+    <!--
+    <h5>Columnas en este conjunto de datos:</h5>
+    <img src="./Captura2.png" alt="Columnas en este conjunto de datos" style="width:100%;height:600px;">
+    -->
+    <p>En la tabla mostrada anteriormente podemos identificar las siguientes columnas:</p>
+    <ol>
+      <li>FECHA_INCIDENTE: TimeStamp en la que se realizó la llamada.</li>
+      <li>FEHCA_INICIO_DESPLAZAMIENTO: TimeStamp en la que se autorizó el desplazamiento de una unidad de emergencia.</li>
+      <li>CODIGO_LOCALIDAD: Codigo de la localdad de Bogotá donde se presento la emergencia.</li>
+      <li>EDAD: Edad de la persona que realizo la llamada.</li>
+      <li>UNIDAD: Unidad de la edad de la persona.</li>
+      <li>GENERO: Género de la persona que realizó la llamada.</li>
+      <li>RED: Dice el nombre de la red que asistió la emergencia, esta puede ser norte o sur.</li>
+      <li>TIPO_INCIDENTE: Descripción del tipo de incidente por el cual se realizo la llamada.</li>
+      <li>PRIORIDAD: Indica la prioridad asignada a la emergencia (Alta-Media-Baja).</li>
+      <li>MES: Mes en el cual se recibió la llamada.</li>
+      <li>CLASIFICACION_FINAL: Resultado del incidente, este puede ser cancelado, desistimiento, fallecimiento, etc.</li>
+    </ol>
+    <h1>Kennedy, la localidad de Bogotá con mayor cantidad de llamadas a la línea 123 durante la primera mitad del 2019</h1>
+    <h3>Mensualmente las lineas de atención 123 de la ciudad de Bogotá reciben entre 13,000 y 32,000 llamadas, la gran mayoría por accidentes de tránsito con heridos o muertos, accidentes que se presentan a diario en las distintas localidades de Bogotá.</h3>
+    <p>En la visualización que se muestra a continuación se puede observar un breve resumen de las llamadas que se realizan a la linea de atencion 123 en Bogotá, donde el área de cada rectángulo representa la cantidad de llamadas que se realizaron por un motivo específico en una localidad específica. En la visualización podemos ver que la localidad de Bogotá en la cual se presentan mas emergencias es Kennedy y la localidad con menos emergencias es La Candelaria, además podemos observar que las principales razones de las llamadas son: Accidentes de tránsito y personas inconscientes o con un paro cardiorespiratorio.</p>
+  </div>
+  <div class="viz">
+    <div class='tableauPlaceholder' id='viz1572361129735' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ll&#47;Llamadas123&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Llamadas123&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ll&#47;Llamadas123&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1572361129735');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1400px';vizElement.style.height='927px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+    <div class="container">
+      <h3>Siguiendo el estándar de Tamara, pasaremos a describir el “What”:</h3>
+      <p>Al ver la fuente de datos podemos ver que es un dataset de tipo tabla, ya que no usamos dentro de la visualización atributos temporales. La tabla esta compuesta por ítems y atributos, donde la página que tiene el dataset permite hacer la descarga en formato CSV. Además, cabe resaltar que la disponibilidad del dataset es de tipo estática y fue actualizada por ultima vez el 12 de junio de 2019. </p>
+      <p>Dado que queriamos consolidados por cada localidad de Bogotá, sumamos la cantidad de llamadas que tuvieron lugar en una localidad de Bogotá con un tipo de incidente específico.</p>
+      <p>A continuación presentaremos unicamente los atributos que usamos para la visualización con sus correspondientes descripciones y ejemplos de ítems asociados a esos atributos:</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Atributo</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Valores de los items</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Localidad</td>
+            <td>Es un Atributo categórico</td>
+            <td>Valores de las distintas localidades de Bogotá como Kennedy, Suba, etc.</td>
+          </tr>
+          <tr>
+            <td>Tipo Incidente</td>
+            <td>Es un Atributo categórico</td>
+            <td>Valores de las distintas emergencias en Bogotá: Accidente de tránsito, intento de suicidio, etc.</td>
+          </tr>
+          <tr>
+            <td>Suma cantidad llamadas</td>
+            <td>Es un atributo ordenado cuantitativo secuencial.</td>
+            <td>Valores entre 0-3074</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Es decir un item representa cuantas llamadas se hicieron a las lineas de emergencia para atender una emergencia de tipo XXX en una localidad XXX.</p>
+      <h3>Siguiendo el estandar de Tamara, pasaremos a describir el “Why”:</h3>
+      <ul>
+        <li><b>Tarea #1.1 principal:</b> Identificar <b>Identify</b> los extremos <b>Extremes</b> de las localidades con mayor numero de llamadas de emergencia a la línea 123.</li>
+        <li><b>Tarea #2.1 secundaria:</b> Identificar <b>Identify</b> los extremos <b>Extremes</b> de los tipos de incidente por los que las personas llaman más a la línea de emergencia 123.</li>
+        <li><b>Tarea #2.2 secundaria:</b>Resumir <b>Summarize</b> las distribuciones  <b>Distribution</b> sobre la cantidad de llamadas que hacen a la línea de emergencia 123 por localidad y tipo de incidente.</li>
+      </ul>
+      <h3>Siguiendo el estandar de Tamara, pasaremos a describir el How:</h3>
+      <h4>Marcas:</h4>
+      <ul>
+        <li> <b> Area:</b> En esta visualización utilizamos el area para representar la cantidad de llamadas que se realizaron en una localidad especifica por un tipo de incidente especifico.  </li>
+      </ul>
+      <h4>Canales:</h4>
+      <ul>
+        <li> <b> Color Hue: </b>El color hue se usa para distinguir las diferentes localidades de Bogotá D.C.</li>
+      </ul>
+      <h4>Mas sobre el how:</h4>
+      <ul>
+      <li>En cuanto al <b>encode</b> se uso un rectilinear layout, donde cada rectangulo grande representa una localidad y cada uno de los rectangulos dentro de ese rectangulo representan la cantidad de llamadas por un tipo de incidente en una localidad especifica.</li>
+      <li>En cuanto al <b>Manipulate</b> se uso un select para poder dar la informacion detallada de un punto de la visualización.</li>
+      <li>En cuanto al <b>Reduce</b> se uso un filter sobre la localidad de Bogotá.</li>
+      </ul>
+      <h3>License:</h3>
+      <p> MIT License </p>
+      <p> Copyright (c) 2019 Nicolás Cáceres Acosta </p>
+      <p> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: </p>
+      <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+      <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+    </div>
+  </body>
+  </html>
