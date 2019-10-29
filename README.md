@@ -14,4 +14,4 @@ Mostrar insights acerca de las llamadas que realizan los ciudadanos de Bogotá a
 [Nicolás Cáceres Acosta](https://github.com/nacaceres)   
 
 # Licencia
-Este proyecto está bajo MIT public license. Se pueden econtrar [aqui]().
+Este proyecto está bajo MIT public license. Se pueden econtrar [aqui](https://github.com/nacaceres/Viz_LlamadasEmergencias/blob/master/LICENSE).
